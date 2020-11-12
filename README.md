@@ -1,4 +1,6 @@
 # gabrielvrl.github.io
+Checkout here: www.gabrielvrl.github.io
+
 My Personal Website
 
 Made with only HTML and CSS.
