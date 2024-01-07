@@ -1,18 +1,19 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import ThemeToggle from './themeToggle';
 ---
 
-<header class="m-0 p-0 background-white ">
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+<header class="m-0 p-0 background-white dark:bg-red">
+	<nav class="flex justify-between items-center">
+		<h2 class="text-base m-0 no-underline"><a class="flex no-underline active:no-underline px-2 py-4 text-black border-b-4 active:border-b-[#2337ff]" href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Articles</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
-		<div class="social-links">
-			<a href="https://m.webtoo.ls/@astro" target="_blank">
+		<div class="md:flex hidden">
+			<a class="flex no-underline active:no-underline px-2 py-4 text-black border-b-4 active:border-b-[#2337ff]" href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -21,7 +22,7 @@ import { SITE_TITLE } from '../consts';
 					></path></svg
 				>
 			</a>
-			<a href="https://twitter.com/astrodotbuild" target="_blank">
+			<a class="flex no-underline active:no-underline px-2 py-4 text-black border-b-4 active:border-b-[#2337ff]" href="https://twitter.com/astrodotbuild" target="_blank">
 				<span class="sr-only">Follow Astro on Twitter</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -30,7 +31,7 @@ import { SITE_TITLE } from '../consts';
 					></path></svg
 				>
 			</a>
-			<a href="https://github.com/withastro/astro" target="_blank">
+			<a class="flex no-underline active:no-underline px-2 py-4 text-black border-b-4 active:border-b-[#2337ff]" href="https://github.com/gabrielvrl" target="_blank">
 				<span class="sr-only">Go to Astro's GitHub repo</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -39,6 +40,7 @@ import { SITE_TITLE } from '../consts';
 					></path></svg
 				>
 			</a>
+			<ThemeToggle client:load />
 		</div>
 	</nav>
 </header>
