@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import react from "@astrojs/react";
-import node from '@astrojs/node';
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
@@ -10,7 +9,4 @@ export default defineConfig({
   base: '/',
   integrations: [mdx(), sitemap(), react(), tailwind()],
   output: 'hybrid',
-  adapter: node({
-    mode: 'standalone',
-  }),
 });
