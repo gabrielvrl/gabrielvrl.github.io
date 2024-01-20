@@ -9,7 +9,7 @@ export default defineConfig({
   site: 'https://gabrielvrl.github.io/',
   base: '/',
   integrations: [mdx(), react(), tailwind()],
-  output: 'hybrid',
+  output: 'server',
   adapter: node({
     mode: "standalone"
   })
