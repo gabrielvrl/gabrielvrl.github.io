@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
-// import mdx from '@astrojs/mdx';
-// import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 // import node from "@astrojs/node";
@@ -9,8 +8,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://gabrielvrl.github.io/',
   base: '/',
-  integrations: [react(), tailwind()],
-  // integrations: [mdx(), sitemap(), react(), tailwind()],
+  integrations: [mdx(), react(), tailwind()],
   // output: 'hybrid',
   // adapter: node({
   //   mode: "standalone"
