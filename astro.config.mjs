@@ -11,7 +11,7 @@ export default defineConfig({
   base: '/',
   integrations: [mdx(), sitemap(), react(), tailwind()],
   output: 'hybrid',
-  adapter: node({
-    mode: "standalone"
-  })
+  // adapter: node({
+  //   mode: "standalone"
+  // })
 });
