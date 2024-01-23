@@ -4,16 +4,20 @@ import { SITE_TITLE } from '../consts';
 import ThemeToggle from './themeToggle';
 ---
 
-<header class="m-0 p-0 bg-slate-100 text-zinc-800 dark:bg-zinc-800 dark:text-slate-200">
+<header class="m-0 p-0 bg-white text-zinc-800 dark:bg-zinc-800 dark:text-slate-200">
 	<nav class="flex justify-between items-center">
-		<h2 class="text-base m-0 no-underline dark:text-white"><a class="flex no-underline active:no-underline px-2 py-4 text-black border-b-4 active:border-b-[#2337ff]" href="/">{SITE_TITLE}</a></h2>
+		<h2 class="text-base m-0 no-underline dark:text-white dark:hover:text-gray-200">
+			<a class="flex no-underline active:no-underline px-2 py-4 border-b-4" href="/">
+				{SITE_TITLE}
+			</a>
+		</h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/article">Articles</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
 		<div class="md:flex hidden">
-			<a class="flex no-underline active:no-underline px-2 py-4 text-black border-b-4 active:border-b-[#2337ff]" href="https://m.webtoo.ls/@astro" target="_blank">
+			<a class="flex no-underline active:no-underline px-2 py-4 border-b-4 text-gray-500 hover:text-gray-600 dark:hover:text-gray-400" href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -22,7 +26,7 @@ import ThemeToggle from './themeToggle';
 					></path></svg
 				>
 			</a>
-			<a class="flex no-underline active:no-underline px-2 py-4 text-black border-b-4 active:border-b-[#2337ff]" href="https://twitter.com/astrodotbuild" target="_blank">
+			<a class="flex no-underline active:no-underline px-2 py-4 border-b-4 text-gray-500 hover:text-gray-600 dark:hover:text-gray-400" href="https://twitter.com/astrodotbuild" target="_blank">
 				<span class="sr-only">Follow Astro on Twitter</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -31,7 +35,7 @@ import ThemeToggle from './themeToggle';
 					></path></svg
 				>
 			</a>
-			<a class="flex no-underline active:no-underline px-2 py-4 text-black border-b-4 active:border-b-[#2337ff]" href="https://github.com/gabrielvrl" target="_blank">
+			<a class="flex no-underline active:no-underline px-2 py-4 border-b-4 text-gray-500 hover:text-gray-600 dark:hover:text-gray-400" href="https://github.com/gabrielvrl" target="_blank">
 				<span class="sr-only">My GitHub Profile</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -71,7 +75,6 @@ import ThemeToggle from './themeToggle';
 	}
 	nav a.active {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
 	}
 	.social-links,
 	.social-links a {
