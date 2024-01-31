@@ -3,7 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { annotate } from 'rough-notation';
+import { Title } from '../components/title';
 
 ---
 <script>
@@ -25,10 +25,10 @@ import { annotate } from 'rough-notation';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="dark:bg-zinc-800 dark:p-2">
+	<body class="dark:bg-zinc-800">
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1 id="hello" class="dark:text-white">🧑‍🚀 Hello, Astronaut!</h1>
+			<Title id="hello">🧑‍🚀 Hello, Astronaut!</Title>
 			<p class="dark:text-white">
 				Welcome to the official <a class="dark:text-blue-600" href="https://astro.build/">Astro</a> article starter template. This
 				template serves as a lightweight, minimally-styled starting point for anyone looking to build
