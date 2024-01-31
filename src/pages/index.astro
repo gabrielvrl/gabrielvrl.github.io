@@ -3,46 +3,62 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { annotate } from 'rough-notation';
+
 ---
+<script>
+	import { annotate } from "rough-notation";
+	const e = document.getElementById('hello');
+	if(e){
+		const annotation = annotate(e, { 
+			type: 'highlight', 
+			animate: true, 
+			animationDuration: 2000,
+			color: '#FFD54F',
+		});
+		annotation.show();
+	}
+</script>
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="dark:bg-zinc-800">
+	<body class="dark:bg-zinc-800 dark:p-2">
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> article starter template. This
+			<h1 id="hello" class="dark:text-white">🧑‍🚀 Hello, Astronaut!</h1>
+			<p class="dark:text-white">
+				Welcome to the official <a class="dark:text-blue-600" href="https://astro.build/">Astro</a> article starter template. This
 				template serves as a lightweight, minimally-styled starting point for anyone looking to build
 				a personal website, article, or portfolio with Astro.
 			</p>
-			<p>
+			<p class="dark:text-white">
 				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
+				<code class="dark:text-zinc-800">astro.config.mjs</code> file. You can customize your setup with
+				<a class="dark:text-blue-600" href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
 				React, or Vue to your project.
 			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
+			<p class="dark:text-white">Here are a few ideas on how to get started with the template:</p>
 			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included article posts in <code>src/pages/article/</code></li>
-				<li>Customize the article post page layout in <code>src/layouts/ArticlePost.astro</code></li>
+				<li class="dark:text-white">Edit this page in <code class="dark:text-zinc-800">src/pages/index.astro</code></li>
+				<li class="dark:text-white">Edit the site header items in <code class="dark:text-zinc-800">src/components/Header.astro</code></li>
+				<li class="dark:text-white">Add your name to the footer in <code class="dark:text-zinc-800">src/components/Footer.astro</code></li>
+				<li class="dark:text-white">Check out the included article posts in <code class="dark:text-zinc-800">src/pages/article/</code></li>
+				<li class="dark:text-white">Customize the article post page layout in <code class="dark:text-zinc-800">src/layouts/ArticlePost.astro</code></li>
 			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
+			<p class="dark:text-white">
+				Have fun! If you get stuck, remember to <a class="dark:text-blue-600" href="https://docs.astro.build/"
 					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+				</a> or <a class="dark:text-blue-600" href="https://astro.build/chat">join us on Discord</a> to ask questions.
 			</p>
-			<p>
-				Looking for a article template with a bit more personality? Check out <a
+			<p class="dark:text-white">
+				Looking for a article template with a bit more personality? Check out <a 
+					class="dark:text-blue-600"
 					href="https://github.com/Charca/astro-article-template"
 					>astro-article-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+				</a> by <a class="dark:text-blue-600" href="https://twitter.com/Charca">Maxi Ferreira</a>.
 			</p>
 		</main>
 		<Footer />
