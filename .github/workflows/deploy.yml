@@ -17,9 +17,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env: 
-      PUBLIC_COSMIC_BUCKET_SLUG: ${{ secrets.PUBLIC_COSMIC_BUCKET_SLUG }}
-      PUBLIC_COSMIC_READ_KEY: ${{ secrets.PUBLIC_COSMIC_READ_KEY }}
+    environment: github-pages
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
