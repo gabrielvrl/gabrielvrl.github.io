@@ -37,8 +37,6 @@ const post = {
     heroImage: props.post.metadata.cover_image.imgix_url
   }
 }
-
-console.log(props.post.metadata.content)
 ---
 <BlogPost {...post.data}>
   <div set:html={props.post.metadata.content} />
