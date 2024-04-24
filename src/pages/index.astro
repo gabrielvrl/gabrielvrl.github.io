@@ -5,31 +5,16 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { Title } from '../components/title';
 import { ViewTransitions } from 'astro:transitions';
-import { getAllPosts } from '../lib/cosmic'
 
 ---
-<script>
-	import { annotate } from "rough-notation";
-	const e = document.getElementById('hello');
-	if(e){
-		const annotation = annotate(e, { 
-			type: 'highlight', 
-			animate: true, 
-			animationDuration: 2000,
-			color: '#FFD54F',
-		});
-		annotation.show();
-	}
-</script>
-
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<ViewTransitions />
 	</head>
 	<body class="dark:bg-zinc-800">
 		<Header title={SITE_TITLE} />
+		<ViewTransitions />
 		<main>
 			<Title id="hello">🧑‍🚀 Hello, Astronaut!</Title>
 			<p class="dark:text-white">

@@ -38,9 +38,6 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  rough-notation:
-    specifier: ^0.5.1
-    version: 0.5.1
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -3905,10 +3902,6 @@ packages:
       '@rollup/rollup-win32-ia32-msvc': 4.9.4
       '@rollup/rollup-win32-x64-msvc': 4.9.4
       fsevents: 2.3.3
-    dev: false
-
-  /rough-notation@0.5.1:
-    resolution: {integrity: sha512-ITHofTzm13cWFVfoGsh/4c/k2Mg8geKgBCwex71UZLnNuw403tCRjYPQ68jSAd37DMbZIePXPjDgY0XdZi9HPw==}
     dev: false
 
   /run-parallel@1.2.0:
