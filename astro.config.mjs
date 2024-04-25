@@ -8,4 +8,8 @@ export default defineConfig({
   site: 'https://gabrielvrl.github.io/',
   base: '/',
   integrations: [mdx(), react(), tailwind()],
+  i18n: {
+    defaultLocale: "pt-br",
+    locales: ["en", "pt-br"],
+  }
 });

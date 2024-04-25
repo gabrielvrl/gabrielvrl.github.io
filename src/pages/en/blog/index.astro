@@ -1,18 +1,18 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import FormattedDate from '../../components/FormattedDate.astro';
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
+import FormattedDate from '../../../components/FormattedDate.astro';
 import { ViewTransitions } from 'astro:transitions';
-import { getAllPosts } from '../../lib/cosmic';
-import {type PostProps} from '../../types/postInterface';
+import { getAllPosts } from '../../../lib/cosmic';
+import {type PostProps} from '../../../types/postInterface';
 
 const data: PostProps[] = await getAllPosts()
 ---
 
 <!doctype html>
-<html lang="ptbr">
+<html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<ViewTransitions />

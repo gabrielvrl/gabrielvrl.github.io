@@ -1,0 +1,81 @@
+---
+import BlogPost from '../../../layouts/BlogPost.astro'
+import { getAllPosts } from '../../../lib/cosmic'
+
+export async function getStaticPaths() {
+  const data = (await getAllPosts()) || []
+
+  return data.map((post: { slug: any }) => {
+    return {
+      params: { slug: post.slug },
+      props: { post }
+    }
+  })
+}
+
+const props: {
+	post: {
+		title: string;
+		metadata: {
+			author: {
+				title: string;
+			};
+			cover_image: {
+				imgix_url: string;
+			};
+			content: string;
+		};
+    
+	}
+} = Astro.props
+
+const post = {
+  data: {
+    title: props.post.title,
+    description: props.post.metadata.content,
+    pubDate: new Date(),
+    heroImage: props.post.metadata.cover_image.imgix_url
+  }
+}
+---
+<BlogPost {...post.data}>
+  <div set:html={props.post.metadata.content} />
+</BlogPost>
+
+<!-- <article class="mx-auto max-w-screen-md pt-20">
+  <section class="border-b pb-8">
+    <h1 class="text-4xl font-bold">{props.post.title}</h1>
+    <div class="my-4"></div>
+    <span class="text-sm font-semibold">{props.post.metadata.author?.title}</span>
+  </section>
+  {
+    props.post.metadata.cover_image && (
+      <Image
+        src={props.post.metadata.cover_image.imgix_url}
+        format="webp"
+        width={1200}
+        height={675}
+        quality={50}
+        alt={`Cover image for the blog ${props.post.title}`}
+        class={'my-12 rounded-md shadow-lg'}
+      />
+    )
+  }
+  <div set:html={props.post.metadata.content} />
+</article> -->
+<!-- ---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+--- -->
