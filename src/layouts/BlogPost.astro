@@ -7,8 +7,6 @@ import FormattedDate from '../components/FormattedDate.astro';
 import { ViewTransitions } from 'astro:transitions';
 import { getLangFromUrl } from '../i18n/utils';
 
-type Props = CollectionEntry<never>['data'];
-
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---

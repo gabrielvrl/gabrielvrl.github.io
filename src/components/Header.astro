@@ -3,7 +3,7 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import ThemeToggle from './themeToggle';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import LanguagePicker from './LanguagePicker.astro';
+import { LanguagePicker } from './languagePicker';
 import { useTranslatedPath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -43,8 +43,8 @@ const translatePath = useTranslatedPath(lang);
 				>
 			</a>
 			<ThemeToggle client:load />
-			<LanguagePicker />
 		</div>
+		<LanguagePicker client:load />
 	</nav>
 </header>
 <style>

@@ -5,10 +5,10 @@ import Footer from '../../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
 import FormattedDate from '../../../components/FormattedDate.astro';
 import { ViewTransitions } from 'astro:transitions';
-import { getAllPosts } from '../../../lib/cosmic';
+import { getAllEnglishPosts } from '../../../lib/cosmic';
 import {type PostProps} from '../../../types/postInterface';
 
-const data: PostProps[] = await getAllPosts()
+const data: PostProps[] = await getAllEnglishPosts()
 ---
 
 <!doctype html>
@@ -92,7 +92,7 @@ const data: PostProps[] = await getAllPosts()
 					{
 						data.map((post: PostProps) => (
 							<li>
-								<a href={`/blog/${post.slug}/`}>
+								<a href={`/en/blog/${post.slug}/`}>
 									<img width={720} height={360} src={post.metadata.cover_image.imgix_url} alt="" />
 									<h4 class="title text-black dark:text-white">{post.title}</h4>
 									<p class="date text-gray-500 dark:text-gray-300">

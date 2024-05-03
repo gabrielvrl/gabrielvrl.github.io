@@ -13,3 +13,12 @@ export async function getAllPosts() {
     .props('title,slug,metadata,created_at')
   return data.objects
 }
+
+export async function getAllEnglishPosts() {
+  const data = await cosmic.objects
+    .find({
+      type: 'enposts'
+    })
+    .props('title,slug,metadata,created_at')
+  return data.objects
+}
