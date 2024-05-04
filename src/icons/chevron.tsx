@@ -5,7 +5,7 @@ interface Props {
 export const Chevron = ({isOpen}: Props) => {
   return (
     <svg
-      className={`-me-1 ms-2 h-5 w-5 ${isOpen ? 'rotate-180' : ''}`}
+      className={`-me-1 ms-2 h-5 w-5 transition-transform ${isOpen ? 'rotate-180' : ''}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"

@@ -27,11 +27,11 @@ export const LanguagePicker = () => {
         <Chevron isOpen={isOpen} />
       </button>
       {isOpen && (
-        <ul className="absolute z-10 mt-1 gap-1 bg-white">
+        <ul className="absolute z-10 mt-2.5 bg-white">
           {lang === "ptbr" ? (
             <a
               href={translatePath(`/${route ? route : ""}`, "en")}
-              className="block text-gray-700 hover:bg-gray-100 dark:bg-zinc-800"
+              className="block text-gray-700 dark:bg-zinc-800"
               onClick={() => setIsOpen(false)}
             >
               <USA />
@@ -39,7 +39,7 @@ export const LanguagePicker = () => {
           ) : (
             <a
               href={translatePath(`/${route ? route : ""}`, "ptbr")}
-              className="block text-gray-700 hover:bg-gray-100 dark:bg-zinc-800"
+              className="block text-gray-700 dark:bg-zinc-800"
               onClick={() => setIsOpen(false)}
             >
               <Brazil />

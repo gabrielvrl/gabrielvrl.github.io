@@ -1,7 +1,7 @@
 export const USA = () => {
   return (
     <div>
-      <div className="text-gray-900 hover:text-gray-800">
+      <div className="hover:opacity-80">
         <svg width="32px" height="32px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 473.677 473.677" xmlSpace="preserve" fill="#000000">
           <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
           <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"/>
