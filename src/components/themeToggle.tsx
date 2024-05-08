@@ -23,7 +23,7 @@ const ThemeToggle = (): JSX.Element => {
   }, [theme]);
 
   return (
-    <button onClick={handleClick}>{theme === "light" ? <Moon /> : <Sun />}</button>
+    <button onClick={handleClick} id="theme">{theme === "light" ? <Moon /> : <Sun />}</button>
   );
 }
 

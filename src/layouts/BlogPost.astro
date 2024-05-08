@@ -10,7 +10,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<html lang={lang}>
+<html lang={lang === "ptbr" ? "pt-br" : lang}>
 	<head>
 		<BaseHead title={title} description={description} />
 		<ViewTransitions />

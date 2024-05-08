@@ -20,6 +20,7 @@ export const LanguagePicker = () => {
         <a
           href={translatePath(`/${route ? route : ""}`, "en")}
           className="block text-gray-700 dark:bg-zinc-800"
+          aria-label="Go to the English version of the website"
         >
           <USA />
         </a>
@@ -27,6 +28,7 @@ export const LanguagePicker = () => {
         <a
           href={translatePath(`/${route ? route : ""}`, "ptbr")}
           className="block text-gray-700 dark:bg-zinc-800"
+          aria-label="Ir para a versão em português do site"
         >
           <Brazil />
         </a>
