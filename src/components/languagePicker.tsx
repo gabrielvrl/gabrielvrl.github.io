@@ -9,10 +9,10 @@ export const LanguagePicker = () => {
     typeof window !== "undefined"
       ? new URL(window.location.href)
       : new URL("https://gabrielvrl.github.io/");
-
+  
+  const route = getRouteFromUrl(url);
   const lang = getLangFromUrl(url);
   const translatePath = useTranslatedPath(lang);
-  const route = getRouteFromUrl(url);
 
   return (
     <div className="relative">

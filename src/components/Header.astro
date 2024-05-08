@@ -24,8 +24,8 @@ const translatePath = useTranslatedPath(lang);
 			<HeaderLink href={translatePath("/about")}>{t('nav.about')}</HeaderLink>
 		</div>
 		<div class="md:flex hidden gap-3 border-zinc-700 border-solid border rounded-full py-2 px-4">
-			<ThemeToggle client:load />
-			<LanguagePicker client:load />
+			<ThemeToggle client:only />
+			<LanguagePicker client:only />
 		</div>
 	</nav>
 </header>

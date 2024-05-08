@@ -25,15 +25,15 @@ export const routes: UIType = {
   },
 }
 
-export const defaultLang: keyof UIType = 'ptbr';
+export const defaultLang: keyof UIType = 'en';
 
 export const ui: UIType = {
   en: {
+    'nav.home': 'Home',
+    'nav.blog': 'Blog',
     'nav.about': 'About',
   },
   ptbr: {
-    'nav.home': 'Home',
-    'nav.blog': 'Blog',
     'nav.about': 'Sobre mim',
   },
 };

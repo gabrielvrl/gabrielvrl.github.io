@@ -9,7 +9,7 @@ export default defineConfig({
   base: '/',
   integrations: [mdx(), react(), tailwind()],
   i18n: {
-    defaultLocale: "pt-br",
+    defaultLocale: "en",
     locales: ["en", "pt-br"],
   }
 });

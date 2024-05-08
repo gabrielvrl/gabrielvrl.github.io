@@ -1,0 +1,99 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { Title } from "../../components/title";
+import { ViewTransitions } from "astro:transitions";
+import { Image } from "astro:assets";
+
+---
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="dark:bg-zinc-800">
+    <Header title={SITE_TITLE} />
+    <ViewTransitions />
+    <main>
+      <div class="flex row w-full gap-4 items-center mb-4">
+        <Image
+          src="https://github.com/gabrielvrl.png"
+          class="rounded-full border-2 border-black border-solid object-cover w-16 h-16 dark:border-white"
+          width={64}
+          height={64}
+          decoding="async"
+          loading="lazy"
+          alt="Gabriel Varela's Photo"
+        />
+        <Title id="hello">Olá, seja bem-vindo!</Title>
+      </div>
+      <p class="dark:text-white">
+        Welcome to the official <a
+          class="dark:text-blue-600"
+          href="https://astro.build/">Astro</a
+        > blog starter template. This template serves as a lightweight, minimally-styled
+        starting point for anyone looking to build a personal website, blog, or portfolio
+        with Astro.
+      </p>
+      <p class="dark:text-white">
+        This template comes with a few integrations already configured in your
+        <code class="dark:text-zinc-800">astro.config.mjs</code> file. You can customize
+        your setup with
+        <a class="dark:text-blue-600" href="https://astro.build/integrations"
+          >Astro Integrations</a
+        > to add tools like Tailwind, React, or Vue to your project.
+      </p>
+      <p class="dark:text-white">
+        Here are a few ideas on how to get started with the template:
+      </p>
+      <ul>
+        <li class="dark:text-white">
+          Edit this page in <code class="dark:text-zinc-800"
+            >src/pages/index.astro</code
+          >
+        </li>
+        <li class="dark:text-white">
+          Edit the site header items in <code class="dark:text-zinc-800"
+            >src/components/Header.astro</code
+          >
+        </li>
+        <li class="dark:text-white">
+          Add your name to the footer in <code class="dark:text-zinc-800"
+            >src/components/Footer.astro</code
+          >
+        </li>
+        <li class="dark:text-white">
+          Check out the included blog posts in <code class="dark:text-zinc-800"
+            >src/pages/blog/</code
+          >
+        </li>
+        <li class="dark:text-white">
+          Customize the blog post page layout in <code
+            class="dark:text-zinc-800">src/layouts/BlogPost.astro</code
+          >
+        </li>
+      </ul>
+      <p class="dark:text-white">
+        Have fun! If you get stuck, remember to <a
+          class="dark:text-blue-600"
+          href="https://docs.astro.build/"
+          >read the docs
+        </a> or <a class="dark:text-blue-600" href="https://astro.build/chat"
+          >join us on Discord</a
+        > to ask questions.
+      </p>
+      <p class="dark:text-white">
+        Looking for a blog template with a bit more personality? Check out <a
+          class="dark:text-blue-600"
+          href="https://github.com/Charca/astro-blog-template"
+          >astro-blog-template
+        </a> by <a class="dark:text-blue-600" href="https://twitter.com/Charca"
+          >Maxi Ferreira</a
+        >.
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>

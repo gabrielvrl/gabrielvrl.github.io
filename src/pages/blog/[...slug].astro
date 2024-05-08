@@ -1,9 +1,10 @@
 ---
+
 import BlogPost from '../../layouts/BlogPost.astro'
-import { getAllPosts } from '../../lib/cosmic'
+import { getAllEnglishPosts } from '../../lib/cosmic'
 
 export async function getStaticPaths() {
-  const data = (await getAllPosts()) || []
+  const data = (await getAllEnglishPosts()) || []
 
   return data.map((post: { slug: any }) => {
     return {

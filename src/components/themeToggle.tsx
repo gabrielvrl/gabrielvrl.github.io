@@ -23,7 +23,7 @@ const ThemeToggle = (): JSX.Element => {
   }, [theme]);
 
   return (
-    <button onClick={handleClick} id="theme">{theme === "light" ? <Moon /> : <Sun />}</button>
+    <button onClick={handleClick} aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}>{theme === "light" ? <Moon /> : <Sun />}</button>
   );
 }
 
