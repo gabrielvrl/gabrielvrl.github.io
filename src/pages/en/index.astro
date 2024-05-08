@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { Title } from '../../components/title';
 import { ViewTransitions } from 'astro:transitions';
+import { Image } from "astro:assets";
 
 ---
 <!doctype html>
@@ -16,7 +17,18 @@ import { ViewTransitions } from 'astro:transitions';
 		<Header title={SITE_TITLE} />
 		<ViewTransitions />
 		<main>
-			<Title id="hello">👨🏻‍💻 Hello, Welcome!</Title>
+      <div class="flex row w-full gap-4 items-center mb-4">
+        <Image
+          src="https://github.com/gabrielvrl.png"
+          class="rounded-full border-2 border-black border-solid object-cover w-16 h-16 dark:border-white"
+          width={64}
+          height={64}
+          decoding="async"
+          loading="lazy"
+          alt="Gabriel Varela's Photo"
+        />
+        <Title id="hello">Hello, Welcome!</Title>
+      </div>
 			<p class="dark:text-white">
 				Welcome to the official <a class="dark:text-blue-600" href="https://astro.build/">Astro</a> blog starter template. This
 				template serves as a lightweight, minimally-styled starting point for anyone looking to build
