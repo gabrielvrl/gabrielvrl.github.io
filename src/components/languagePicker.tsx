@@ -13,6 +13,9 @@ export const LanguagePicker = () => {
   const route = getRouteFromUrl(url);
   const lang = getLangFromUrl(url);
   const translatePath = useTranslatedPath(lang);
+  console.log("lang", lang)
+  console.log("route", route)
+  console.log("translatePath", translatePath(`/${route ? route : ""}`, "en"))
 
   return (
     <div className="relative">
