@@ -30,19 +30,15 @@ export function useTranslatedPath(lang: keyof typeof ui) {
 }
 
 export function getRouteFromUrl(url: URL): string | undefined {
-  console.log("url", url);
   const pathname = new URL(url).pathname;
-  console.log("pathname", pathname);
   const parts = pathname?.split("/");
-  console.log("parts", parts);
   const path = parts.pop() || parts.pop();
-  console.log("path", path);
 
   if (path === undefined) {
     return undefined;
   }
 
-  if (pathname.startsWith("/blog/") || pathname.startsWith("/ptbr/blog/")) {
+  if ((pathname.includes("/blog/") && path.slice("/blog/".length).length > 0)) {
     return `blog/${path}`;
   }
 
