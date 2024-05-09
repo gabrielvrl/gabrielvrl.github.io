@@ -63,11 +63,11 @@ const lang = getLangFromUrl(Astro.url);
 				<div class="prose text-gray-700 dark:text-zinc-100">
 					<div class="title">
 						<div class="date text-gray-700 dark:text-zinc-100">
-							<FormattedDate date={pubDate} />
+							<FormattedDate date={pubDate} lang={lang} />
 							{
 								updatedDate && (
 									<div class="last-updated-on text-gray-700 dark:text-zinc-100">
-										Last updated on <FormattedDate date={updatedDate} />
+										Last updated on <FormattedDate date={updatedDate} lang={lang} />
 									</div>
 								)
 							}
