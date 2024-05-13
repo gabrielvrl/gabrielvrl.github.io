@@ -32,9 +32,11 @@ export const ui: UIType = {
     'nav.home': 'Home',
     'nav.blog': 'Blog',
     'nav.about': 'About',
+    'nav.title': 'Navigation',
   },
   ptbr: {
     'nav.about': 'Sobre mim',
+    'nav.title': 'Navegação',
   },
 };
 

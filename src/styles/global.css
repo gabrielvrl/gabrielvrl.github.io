@@ -82,10 +82,10 @@ b {
 	font-weight: 700;
 }
 a {
-	color: var(--accent);
+	color: inherit;
 }
 a:hover {
-	color: var(--accent);
+	color: inherit;
 }
 p {
 	margin-bottom: 1em;

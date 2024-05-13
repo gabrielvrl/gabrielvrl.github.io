@@ -5,6 +5,7 @@ import ThemeToggle from './themeToggle';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { LanguagePicker } from './languagePicker';
 import { useTranslatedPath } from '../i18n/utils';
+import { Menu } from './menu';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,20 +13,21 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 <header class="m-0 p-0 bg-white text-zinc-800 dark:bg-zinc-800 dark:text-slate-200">
-	<nav class="flex justify-between items-center">
+	<nav class="flex justify-between items-center max-sm:h-20">
 		<h2 class="text-base m-0 no-underline dark:text-white dark:hover:text-gray-200">
 			<a class="flex no-underline active:no-underline px-2 py-4 border-b-4" href="/">
 				{SITE_TITLE}
 			</a>
 		</h2>
-		<div class="internal-links">
+		<div class="internal-links max-sm:hidden">
 			<HeaderLink href={translatePath("/")}>{t('nav.home')}</HeaderLink>
 			<HeaderLink href={translatePath("/blog")}>{t('nav.blog')}</HeaderLink>
 			<HeaderLink href={translatePath("/about")}>{t('nav.about')}</HeaderLink>
 		</div>
-		<div class="md:flex hidden gap-3 border-zinc-700 border-solid border rounded-full py-2 px-4">
+		<div class="flex gap-3 border-zinc-700 border-solid border rounded-full py-2 px-4 shadow-inner dark:shadow-zinc-900 shadow-zinc-400">
 			<ThemeToggle client:only />
 			<LanguagePicker client:only />
+			<Menu client:only />
 		</div>
 	</nav>
 </header>
