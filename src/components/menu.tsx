@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Chevron } from "../icons/chevron";
-import HeaderLink from "./HeaderLink.astro";
 import {
   getLangFromUrl,
   useTranslatedPath,
@@ -21,7 +20,7 @@ export const Menu = () => {
 
   return (
     <>
-      <button className="hidden max-sm:block" onClick={handleClick}>
+      <button aria-label="Open menu" className="hidden max-sm:block" onClick={handleClick}>
         <Chevron rotate={rotate} />
       </button>
       {rotate && (
@@ -56,22 +55,24 @@ export const Menu = () => {
                   ></path>
                 </svg>
               </button>
-              <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+              <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400 m-0">
                 {t("nav.title")}
               </h2>
             </div>
-            <nav className="mt-6">
-              <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+            <nav className="mt-4">
+              <ul className="flex flex-row justify-between text-base">
                 <li>
                   <a className="block py-2" href={translatePath("/")}>
                     {t("nav.home")}
                   </a>
                 </li>
+                <div className="w-px h-auto bg-zinc-100 dark:bg-zinc-800" />
                 <li>
                   <a className="block py-2" href={translatePath("/blog")}>
                     {t("nav.blog")}
                   </a>
                 </li>
+                <div className="w-px h-auto bg-zinc-100 dark:bg-zinc-800" />
                 <li>
                   <a className="block py-2" href={translatePath("/about")}>
                     {t("nav.about")}
