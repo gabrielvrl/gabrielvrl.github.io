@@ -39,9 +39,10 @@ export const Menu = () => {
             onClick={handleClick}
           />
           <div
-            className={`animate-${
-              rotate ? "slideIn-stop" : "slideOut"
-            } fixed inset-x-4 top-10 z-50 hidden origin-top scale-100 rounded-3xl bg-white p-8 opacity-100 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 max-sm:block`}
+            className={
+              `
+              animate-bounce 
+            fixed inset-x-4 top-10 z-50 hidden origin-top scale-100 rounded-3xl bg-white p-8 opacity-100 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 max-sm:block`}
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <button
