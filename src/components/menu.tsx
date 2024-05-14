@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Chevron } from "../icons/chevron";
 import {
   getLangFromUrl,

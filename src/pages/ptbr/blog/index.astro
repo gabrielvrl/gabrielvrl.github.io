@@ -85,9 +85,9 @@ const lang = getLangFromUrl(Astro.url);
       }
     </style>
   </head>
-  <body class="dark:bg-zinc-800">
+  <body class="dark:bg-zinc-800 min-h-screen flex flex-col">
     <Header />
-    <main>
+    <main class="flex-grow">
       <section>
         <ul>
           {

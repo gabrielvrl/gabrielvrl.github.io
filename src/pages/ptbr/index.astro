@@ -5,17 +5,16 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { Title } from "../../components/title";
 import { ViewTransitions } from "astro:transitions";
-import { Image } from "astro:assets";
 
 ---
 <!doctype html>
 <html lang="pt-br">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <ViewTransitions />
   </head>
 	<body class="dark:bg-zinc-800 min-h-screen flex flex-col">
     <Header title={SITE_TITLE} />
-    <ViewTransitions />
 		<main class="flex-grow">
       <div class="flex row w-full gap-4 items-center mb-4">
         <Title id="hello">Olá! 👋</Title>
