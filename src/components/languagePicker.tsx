@@ -1,5 +1,8 @@
-import { getRouteFromUrl, useTranslatedPath } from "../i18n/utils";
-import { getLangFromUrl } from "../i18n/utils";
+import {
+  getRouteFromUrl,
+  useTranslatedPath,
+  getLangFromUrl,
+} from "../i18n/utils";
 
 import { Brazil } from "../icons/brazil";
 import { USA } from "../icons/usa";
@@ -9,7 +12,7 @@ export const LanguagePicker = () => {
     typeof window !== "undefined"
       ? new URL(window.location.href)
       : new URL("https://gabrielvrl.github.io/");
-  
+
   const route = getRouteFromUrl(url);
   const lang = getLangFromUrl(url);
   const translatePath = useTranslatedPath(lang);

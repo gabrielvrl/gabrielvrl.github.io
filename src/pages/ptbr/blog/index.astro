@@ -5,11 +5,12 @@ import Footer from "../../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import FormattedDate from "../../../components/FormattedDate.astro";
 import { ViewTransitions } from "astro:transitions";
-import { getAllPosts } from "../../../lib/cosmic";
-import { type PostProps } from "../../../types/postInterface";
 import { getLangFromUrl } from "../../../i18n/utils";
+import { getCollection } from "astro:content";
 
-const data: PostProps[] = await getAllPosts();
+const data = (await getCollection("ptbrblog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -91,18 +92,20 @@ const lang = getLangFromUrl(Astro.url);
       <section>
         <ul>
           {
-            data.map((post: PostProps) => (
+            data.map((post) => (
               <li>
                 <a href={`/ptbr/blog/${post.slug}/`}>
                   <img
                     width={720}
                     height={360}
-                    src={post.metadata.cover_image.imgix_url}
+                    src={post.data.heroImage}
                     alt=""
                   />
-                  <h4 class="title text-black dark:text-white">{post.title}</h4>
+                  <h4 class="title text-black dark:text-white">
+                    {post.data.title}
+                  </h4>
                   <p class="date text-gray-500 dark:text-gray-300">
-                    <FormattedDate date={new Date()} lang={lang} />
+                    <FormattedDate date={post.data.pubDate} lang={lang} />
                   </p>
                 </a>
               </li>
