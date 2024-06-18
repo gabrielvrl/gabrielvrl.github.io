@@ -10,7 +10,7 @@ const lang = getLangFromUrl(Astro.url);
     <a
       href="https://www.linkedin.com/in/gabrielvrl/"
       target="_blank"
-      class="text-gray-500 hover:text-gray-600 dark:hover:text-gray-400"
+      class="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-400"
     >
       <span class="sr-only">LinkedIn</span>
       <svg
@@ -47,7 +47,7 @@ const lang = getLangFromUrl(Astro.url);
     <a
       href="https://github.com/gabrielvrl"
       target="_blank"
-      class="text-gray-500 hover:text-gray-600 dark:hover:text-gray-400"
+      class="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-400"
     >
       <span class="sr-only">Go to Gabriel Varela's GitHub repo</span>
       <svg
@@ -63,7 +63,7 @@ const lang = getLangFromUrl(Astro.url);
       >
     </a>
   </div>
-  <span class="text-gray-500"
+  <span class="text-gray-500 dark:text-gray-400"
     >&copy; {today.getFullYear()} Gabriel Varela. {
       lang === "en" ? "All rights reserved" : "Todos os direitos reservados"
     }.</span
