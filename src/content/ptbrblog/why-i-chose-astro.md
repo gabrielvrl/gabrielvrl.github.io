@@ -7,10 +7,10 @@ heroImage: "/astro.png"
 
 ## <span class="dark:text-white">O que é Astro?</span>
 
-O Astro é um framework web que visa <span class="font-bold">ser performático</span>. De acordo com sua própria <a href="https://docs.astro.build/pt-br/concepts/why-astro/" class="dark:text-white dark:hover:text-gray-100">documentação</a>, foi pioneiro na <a href="https://docs.astro.build/pt-br/concepts/islands/" class="dark:text-white dark:hover:text-gray-100">arquitetura em ilhas</a>, que visa reduzir o excesso e a complexidade do JavaScript no lado do cliente.
+O Astro é um framework web que visa <span class="font-bold">ser performático</span>. De acordo com sua própria <a target="_blank" href="https://docs.astro.build/pt-br/concepts/why-astro/" class="dark:text-white dark:hover:text-gray-100">documentação</a>, foi pioneiro na <a target="_blank" href="https://docs.astro.build/pt-br/concepts/islands/" class="dark:text-white dark:hover:text-gray-100">arquitetura em ilhas</a>, que visa reduzir o excesso e a complexidade do JavaScript no lado do cliente.
 
 Vamos entrar no detalhe técnico dessa arquitetura: <br />
-A arquitetura em Ilhas do Astro é uma forma de trabalhar em que a página é construída por partes estáticas e por parte interativas, que podemos entender e chamar de ilhas. Acompanhe na seguinte figura:
+A arquitetura em ilhas do Astro é uma forma de trabalhar em que a página é construída por partes estáticas e por parte interativas, que podemos entender e chamar de ilhas. Acompanhe na seguinte figura:
 
 <img src="/astro-islands.png" />
 
@@ -20,7 +20,7 @@ Considerações importantes sobre ilhas:
 
 1. Uma ilha executa de forma isolada de outras ilhas na página.
 2. Podem existir múltiplas ilhas em uma mesma página.
-3. Devido ao suporte do Astro à múltiplos frameworks, como React, Vue, Svelte… É possível, pela arquitetura de ilhas, ter múltiplos frameworks em uma página. Que pode ser uma vantagem caso tenha mais de um desenvolvedor no projeto ou você queira aprender um novo framework sem começar um projeto do zero ou até migrar de framework sem um período de inatividade.
+3. Devido ao suporte do Astro à <a target="_blank" href="https://docs.astro.build/pt-br/guides/integrations-guide/#integra%C3%A7%C3%B5es-oficiais" class="dark:text-white dark:hover:text-gray-100">múltiplos frameworks</a>, como React, Vue, Svelte… É possível, pela arquitetura de ilhas, ter múltiplos frameworks em uma página. Que pode ser uma vantagem caso tenha mais de um desenvolvedor no projeto ou você queira aprender um novo framework sem começar um projeto do zero ou até migrar de framework sem um período de inatividade.
 
 <br />
 
@@ -38,9 +38,9 @@ Para tornar um componente de UI estático para uma ilha interativa é bem simple
 <MeuComponenteReact client:load />
 ```
 
-Podemos passar `client:load` , `client:only` , `client:idle`, `client:visible` e cada propriedade tem sua peculiaridade que você pode ler em mais detalhes <a href="https://docs.astro.build/en/reference/directives-reference/#client-directives" class="dark:text-white dark:hover:text-gray-100">aqui</a>.
+Podemos passar `client:load` , `client:only` , `client:idle`, `client:visible` e cada propriedade tem sua peculiaridade que você pode ler em mais detalhes <a target="_blank" href="https://docs.astro.build/pt-br/reference/directives-reference/#client-directives" class="dark:text-white dark:hover:text-gray-100">aqui</a>.
 
-Você pode ter percebido que essa funcionalidade é muito familiar com o <a href="https://react.dev/reference/rsc/server-components" class="dark:text-white dark:hover:text-gray-100">_server compponents_</a> e a diretriz <a href="https://react.dev/reference/rsc/use-client" class="dark:text-white dark:hover:text-gray-100">_'use client'_</a> do React, porém, na minha opinião, o Astro é um framework mais simples e menos inchado que o React, o que o faz uma melhor escolha para um blog simples como o meu. Irei tratar mais sobre esse tema na próxima <a href="#por-que-escolhi-o-astro-e-quais-eram-as-outras-opções" class="dark:text-white dark:hover:text-gray-100">seção</a>.
+Você pode ter percebido que essa funcionalidade é muito familiar com o <a target="_blank" href="https://react.dev/reference/rsc/server-components" class="dark:text-white dark:hover:text-gray-100">_server compponents_</a> e a diretriz <a target="_blank" href="https://react.dev/reference/rsc/use-client" class="dark:text-white dark:hover:text-gray-100">_'use client'_</a> do React, porém, na minha opinião, o Astro é um framework mais simples e menos inchado que o React, o que o faz uma melhor escolha para um blog simples como o meu. Irei tratar mais sobre esse tema na próxima <a target="_blank" href="#por-que-escolhi-o-astro-e-quais-eram-as-outras-opções" class="dark:text-white dark:hover:text-gray-100">seção</a>.
 
 Na minha opinião, é a combinação dessas duas funcionalidades que faz com o Astro seja performático e tenha uma ótima experiência de desenvolvimento.
 
@@ -49,20 +49,14 @@ Em suma, sobre o Astro:
 1. Servidor em primeiro lugar, tirando a renderização dos dispositivos dos usuários.
 2. Zero JS, por padrão.
 3. Coleções de conteúdo: Organiza, valida e ofereçe segurança de tipos do TypeScript para seus conteúdos Markdown.
-4. Customizável: Fornece diversas integrações com as principais ferramentas da atualidade, incluindo <a href="https://docs.astro.build/pt-br/guides/integrations-guide/tailwind/" class="dark:text-white dark:hover:text-gray-100">Tailwind</a> e <a href="https://docs.astro.build/en/guides/typescript/" class="dark:text-white dark:hover:text-gray-100">Typescript</a> de forma muito simples. Veja outras integrações <a href="https://docs.astro.build/pt-br/guides/integrations-guide/" class="dark:text-white dark:hover:text-gray-100">aqui</a>.
+4. Customizável: Fornece diversas integrações com as principais ferramentas da atualidade, incluindo <a target="_blank" href="https://docs.astro.build/pt-br/guides/integrations-guide/tailwind/" class="dark:text-white dark:hover:text-gray-100">Tailwind</a> e <a target="_blank" href="https://docs.astro.build/pt-br/guides/typescript/" class="dark:text-white dark:hover:text-gray-100">Typescript</a> de forma muito simples. Veja outras integrações <a target="_blank" href="https://docs.astro.build/pt-br/guides/integrations-guide/" class="dark:text-white dark:hover:text-gray-100">aqui</a>.
 
 ## <span class="dark:text-white">Por que escolhi o Astro e quais eram as outras opções?</span>
 
-<a href="https://react.dev/" class="dark:text-white dark:hover:text-gray-100">React.js</a>
-<a href="https://nextjs.org/" class="dark:text-white dark:hover:text-gray-100">Next.js</a>
-<a href="https://remix.run/" class="dark:text-white dark:hover:text-gray-100">Remix</a>
-<a href="https://www.gatsbyjs.com/" class="dark:text-white dark:hover:text-gray-100">Gatsby</a>
-<a href="https://react.dev/learn/start-a-new-react-project" class="dark:text-white dark:hover:text-gray-100">documentação</a>
+Eu estava buscando algo simples e moderno, em que eu pudesse utilizar o <a target="_blank" href="https://react.dev/" class="dark:text-white dark:hover:text-gray-100">React.js</a>, ferramenta que venho trabalhando nos últimos anos. Então, minha opções eram:
 
-Eu estava buscando algo simples e moderno, em que eu pudesse utilizar o React.js, ferramenta que venho trabalhando nos últimos anos. Então, minha opções eram:
-
-1. Uma aplicação apenas com React.js, porém fiquei com receio de que pudesse perder em suporte e funcionalidades, já que a própria documentação do React recomenda o uso de frameworks. ❌
-2. Utilizar um framework, nesse caso teriam algumas opções, como o Gatsby e o Remix, mas como eu já trabalhei com o Next.js no passado, seria ele o framework React que eu iria escolher. Porém, o intuito desse site é ser apenas um blog simples em que eu possa compartilhar parte do meu conhecimento e expressar minhas opiniões sobre assuntos técnicos. Eu entendi que a escolha do Next.js, no estado atual, seria como utilizar uma bazuca para matar uma formiga. Mal consigo acompanhar as novidades que o framework lança a cada 6 meses, será que meu blog não sofreria por isso? ❌
+1. Uma aplicação apenas com React.js, porém fiquei com receio de que pudesse perder em suporte e funcionalidades, já que a própria <a target="_blank" href="https://react.dev/learn/start-a-new-react-project" class="dark:text-white dark:hover:text-gray-100">documentação</a> do React recomenda o uso de frameworks. ❌
+2. Utilizar um framework, nesse caso teriam algumas opções, como o <a target="_blank" href="https://www.gatsbyjs.com/" class="dark:text-white dark:hover:text-gray-100">Gatsby</a> e o <a target="_blank" href="https://remix.run/" class="dark:text-white dark:hover:text-gray-100">Remix</a>, mas como eu já trabalhei com o <a target="_blank" href="https://nextjs.org/" class="dark:text-white dark:hover:text-gray-100">Next.js</a> no passado, seria ele o framework React que eu iria escolher. Porém, o intuito desse site é ser apenas um blog simples em que eu possa compartilhar parte do meu conhecimento e expressar minhas opiniões sobre assuntos técnicos. Eu entendi que a escolha do Next.js, no estado atual, seria como utilizar uma bazuca para matar uma formiga. Mal consigo acompanhar as novidades que o framework lança a cada 6 meses, será que meu blog não sofreria por isso? ❌
 3. Por fim, encontrei o Astro, que parecia ser exatamente o que eu precisava. Um framework web simples, performático e que eu poderia utilizar o React.js. ✅
 
 Podemos criar componentes e páginas Astro com a extensão `.astro`, que tem uma sintaxe muito familiar aos dos frameworks atuais, por exemplo, veja a renderização das páginas de cada artigo do meu blog:
@@ -129,4 +123,4 @@ O Astro me permite trabalhar com React.js, Typescript e Tailwind de uma maneira 
 
 <img src="/lighthouse.png" />
 
-Quando comecei a escrever esse post, estava utilizando um CMS externo, mas, até para seguir com minha filosofia de manter a simplicidade para este blog, estou escrevendo em arquivos `.md`. Espero que você tenha gostado do conteúdo, minha intenção é compartilhar minhas experiências, conhecimentos técnicos e aprender mais no processo. Obrigado.
+Quando comecei a escrever esse post, estava utilizando um CMS externo, mas, até para seguir com minha filosofia de manter a simplicidade para este blog, estou escrevendo em arquivos `.md`, que já vem configurado pelo Astro em seu template de blog para que funcione sem nenhuma configuração extra. Espero que você tenha gostado do conteúdo, minha intenção é compartilhar minhas experiências, conhecimentos técnicos e aprender mais no processo. Obrigado.
