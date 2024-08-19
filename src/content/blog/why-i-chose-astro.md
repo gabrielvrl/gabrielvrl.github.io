@@ -1,5 +1,5 @@
 ---
-title: "Why did i choose Astro to build my blog?"
+title: "Why did I choose Astro to build my blog?"
 description: "description"
 pubDate: "Aug 18 2024"
 heroImage: "/astro.png"
