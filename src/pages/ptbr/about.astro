@@ -1,12 +1,44 @@
 ---
-import Layout from "../../layouts/BlogPost.astro";
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { Title } from "../../components/title";
+import { ViewTransitions } from "astro:transitions";
 ---
 
-<Layout
-  title="About Me"
-  description="Lorem ipsum dolor sit amet"
-  pubDate={new Date("May 13 2024")}
-  heroImage="/blog-placeholder-about.jpg"
->
-  <p>Em construção 🚧 Por favor volte mais tarde.</p>
-</Layout>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <ViewTransitions />
+  </head>
+  <body class="dark:bg-zinc-800 min-h-screen flex flex-col">
+    <Header title={SITE_TITLE} />
+    <main class="flex-grow">
+      <div class="flex row w-full gap-4 items-center mb-4">
+        <Title id="hello">Olá! 👋</Title>
+      </div>
+      <p class="dark:text-white">Seja bem vindo ao meu blog!</p>
+
+      <p class="dark:text-white">
+        Sou um Engenheiro de Software brasileiro focado em desenvolver
+        aplicações Front-end e Mobile de alta qualidade utilizando ReactJS,
+        Next.js e React Native. <br /> Um entusiasta de back-end e DevOps.
+      </p>
+
+      <p class="dark:text-white">
+        O que me motiva é desenvolver e lançar produtos que impactem as pessoas
+        e o mundo de forma positiva. Para fazer isso, a programação é o caminho
+        a seguir, na minha opinião.
+      </p>
+
+      <p class="dark:text-white">
+        Meu background em engenharia também consiste em, mas não se limita a,
+        Node.js, MongoDB, SQLite, C++, Python, Machine Learning, Inteligência
+        Artificial, Redes e Grafos.
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>

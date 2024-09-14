@@ -30,13 +30,11 @@ export const Menu = () => {
       {rotate && (
         <>
           <div
-            className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80 max-sm:block delay-2000 opacity-100 transition-opacity duration-1000 ease-linear"
+            className="delay-2000 fixed inset-0 z-50 bg-zinc-800/40 opacity-100 backdrop-blur-sm transition-opacity duration-1000 ease-linear dark:bg-black/80 max-sm:block"
             aria-hidden="true"
             onClick={handleClick}
           />
-          <div
-            className="animate-slideIn-stop fixed inset-x-4 top-10 z-50 hidden origin-top scale-100 rounded-3xl bg-white p-8 opacity-100 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 max-sm:block"
-          >
+          <div className="fixed inset-x-4 top-10 z-50 hidden origin-top scale-100 animate-slideIn-stop rounded-3xl bg-white p-8 opacity-100 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 max-sm:block">
             <div className="flex flex-row-reverse items-center justify-between">
               <button
                 aria-label="Close menu"
@@ -68,11 +66,6 @@ export const Menu = () => {
                 <li>
                   <a className="block py-2" href={translatePath("/")}>
                     {t("nav.home")}
-                  </a>
-                </li>
-                <li>
-                  <a className="block py-2" href={translatePath("/blog")}>
-                    {t("nav.blog")}
                   </a>
                 </li>
                 <li>

@@ -8,37 +8,33 @@ type UIType = {
 };
 
 export const languages = {
-  en: 'English',
-  ptbr: 'Português',
+  en: "English",
+  ptbr: "Português",
 };
 
 export const routes: UIType = {
   en: {
-    'home': '',
-    'blog': 'blog',
-    'about': 'about',
+    home: "",
+    about: "about",
   },
   ptbr: {
-    'home': '',
-    'blog': 'blog',
-    'about': 'about',
+    home: "",
+    about: "about",
   },
-}
+};
 
-export const defaultLang: keyof UIType = 'en';
+export const defaultLang: keyof UIType = "en";
 
 export const ui: UIType = {
   en: {
-    'nav.home': 'Home',
-    'nav.blog': 'Blog',
-    'nav.about': 'About',
-    'nav.title': 'Navigation',
+    "nav.home": "Home",
+    "nav.about": "About me",
+    "nav.title": "Navigation",
   },
   ptbr: {
-    'nav.about': 'Sobre mim',
-    'nav.title': 'Navegação',
+    "nav.about": "Sobre mim",
+    "nav.title": "Navegação",
   },
 };
 
 export const showDefaultLang = false;
-

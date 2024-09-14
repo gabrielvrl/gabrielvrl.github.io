@@ -1,12 +1,46 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { Title } from "../components/title";
+import { ViewTransitions } from "astro:transitions";
 ---
 
-<Layout
-  title="About Me"
-  description="Lorem ipsum dolor sit amet"
-  pubDate={new Date("May 13 2024")}
-  heroImage="/blog-placeholder-about.jpg"
->
-  <p>Under construction 🚧 Please come back later.</p>
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="dark:bg-zinc-800 min-h-screen flex flex-col">
+    <Header title={SITE_TITLE} />
+    <ViewTransitions />
+    <main class="flex-grow">
+      <div class="flex row w-full gap-4 items-center mb-4">
+        <Title id="hello">Hey! 👋</Title>
+      </div>
+      <p class="dark:text-white">
+        Welcome to my blog! <br />
+      </p>
+
+      <p class="dark:text-white">
+        I'm a brazilian Software Engineer focused on developing high-quality
+        Front-end and Mobile applications using ReactJS, Next.js, and React
+        Native. <br /> A bit of back-end and DevOps enthusiastic.
+      </p>
+
+      <p class="dark:text-white">
+        What drives me is to develop and ship products that impact people and
+        the world in a positive way. To be able to do that, coding is the way to
+        go in my opinion.
+      </p>
+
+      <p class="dark:text-white">
+        My engineering background also consists of, but it's not limited to,
+        Node.js, MongoDB, SQLite, C++, Python, Machine Learning, Artificial
+        Intelligence, Networks, and Graphs.
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>
