@@ -5,7 +5,7 @@ pubDate: "Sep 14 2024"
 heroImage: "/typescript.png"
 ---
 
-Imagine you have a function that calculates the area of a geometric figure. Let's create a `Shape` interface and focus on two basic figures for now: a `circle` and a `square`.
+Imagine that we have a function that calculates the area of ​​a geometric figure and we need to create a `Shape` interface for this function. For now we will just focus on two basic figures: a `circle`, and a `square`.
 
 Going back to some high school math, to calculate the area of a `circle`, we need to use the formula `π * radius²`, or `π * radius * radius`. For a `square`, we need the `sideLength`. So, to calculate the area of a square, we can multiply the side length by itself: `sideLength * sideLength`.
 
