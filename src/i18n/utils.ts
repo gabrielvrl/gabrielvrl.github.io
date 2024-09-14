@@ -38,8 +38,10 @@ export function getRouteFromUrl(url: URL): string | undefined {
     return undefined;
   }
 
-  if ((pathname.includes("/blog/") && path.slice("/blog/".length).length > 0)) {
-    return `blog/${path}`;
+  const validPaths = new Set(["/", "/ptbr/", "/ptbr", "/about", "/ptbr/about"]);
+
+  if (!validPaths.has(pathname)) {
+    return `${path}`;
   }
 
   const currentLang = getLangFromUrl(url);
