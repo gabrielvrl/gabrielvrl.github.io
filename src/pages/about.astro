@@ -11,6 +11,20 @@ import { ViewTransitions } from "astro:transitions";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0N8W2XC6YE"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-0N8W2XC6YE");
+    </script>
   </head>
   <body class="dark:bg-zinc-800 min-h-screen flex flex-col">
     <Header title={SITE_TITLE} />
