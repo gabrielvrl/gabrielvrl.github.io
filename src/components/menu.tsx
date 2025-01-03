@@ -69,6 +69,11 @@ export const Menu = () => {
                   </a>
                 </li>
                 <li>
+                  <a className="block py-2" href={translatePath("/books")}>
+                    {t("nav.books")}
+                  </a>
+                </li>
+                <li>
                   <a className="block py-2" href={translatePath("/about")}>
                     {t("nav.about")}
                   </a>

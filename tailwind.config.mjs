@@ -5,6 +5,7 @@ export default {
   theme: {
     screens: {
       "max-sm": { max: "640px" },
+      "max-md": { max: "760px" },
     },
     extend: {
       animation: {

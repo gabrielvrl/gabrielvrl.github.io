@@ -1,0 +1,126 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { Text } from "../components/text";
+import { ViewTransitions } from "astro:transitions";
+import TypingEffect from "../components/typingEffect";
+import { Title } from "../components/title";
+type Book = {
+  name: string;
+  author: string;
+  img_url: string;
+  amzn_url: string;
+};
+
+const recommendedBooks: Book[] = [
+  {
+    amzn_url: "https://amzn.to/4fCalfm",
+    author: "Zeno Rocha",
+    img_url:
+      "https://m.media-amazon.com/images/I/719Siqxb0eL._UF1000,1000_QL80_.jpg",
+    name: "14 Habits of Highly Productive Developers",
+  },
+];
+
+const books: Book[] = [
+  {
+    name: "Refactoring",
+    author: "Martin Fowler",
+    img_url:
+      "https://m.media-amazon.com/images/I/71yPDDIwcoL._UF894,1000_QL80_.jpg",
+    amzn_url: "https://amzn.to/41YkgZv",
+  },
+  {
+    name: "Clean Code",
+    author: "Robert C. Martin",
+    img_url: "https://m.media-amazon.com/images/I/51E2055ZGUL.jpg",
+    amzn_url: "https://amzn.to/3BR66ii",
+  },
+  {
+    name: "The Pragmatic Programmer",
+    author: "David Thomas, Andrew Hunt",
+    img_url: "https://m.media-amazon.com/images/I/71f1jieYHNL.jpg",
+    amzn_url: "https://amzn.to/3BQDs0I",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0N8W2XC6YE"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-0N8W2XC6YE");
+    </script>
+  </head>
+  <body class="dark:bg-zinc-800 min-h-screen flex flex-col">
+    <Header title={SITE_TITLE} />
+    <ViewTransitions />
+    <main class="flex-grow">
+      <Title className="max-sm:text-2xl font-bold typing-effect">
+        My recommendations
+      </Title>
+      <div class="grid grid-cols-2 gap-8 mt-8 max-sm:grid-cols-1 mb-10">
+        {
+          recommendedBooks.map((book) => (
+            <div class="flex gap-4 flex-col items-center">
+              <img class="h-48 w-auto" src={`${book.img_url}`} />
+              <div class="flex flex-col items-center gap-2 justify-center">
+                <Text className="font-semibold">{book.name}</Text>
+                <Text className="!dark:text-gray-500 !text-base">
+                  {book.author}
+                </Text>
+                <a href={`${book.amzn_url}`} target="_blank">
+                  <button class="mt-4 p-2 px-4 rounded-md bg-orange-400 text-gray-800 dark:text-white text-base font-semibold">
+                    Buy on Amazon
+                  </button>
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <TypingEffect
+        textClassName="font-semibold text-xl"
+        text="Currently reading"
+        client:only
+      />
+
+      <div class="grid grid-cols-2 gap-8 mt-8 max-sm:grid-cols-1">
+        {
+          books.map((book) => (
+            <div class="flex gap-4 flex-col items-center">
+              <img class="h-48 w-auto" src={`${book.img_url}`} />
+              <div class="flex flex-col items-center gap-2 justify-center">
+                <Text className="font-semibold">{book.name}</Text>
+                <Text className="!dark:text-gray-500 !text-base">
+                  {book.author}
+                </Text>
+                <a href={`${book.amzn_url}`} target="_blank">
+                  <button class="mt-4 p-2 px-4 rounded-md bg-orange-400 text-gray-800 dark:text-white text-base font-semibold">
+                    Buy on Amazon
+                  </button>
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
