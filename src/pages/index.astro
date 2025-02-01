@@ -8,9 +8,11 @@ import { ViewTransitions } from "astro:transitions";
 import { getLangFromUrl } from "../i18n/utils";
 import { getCollection } from "astro:content";
 
-const data = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
-);
+const data = (await getCollection("blog")).sort((a, b) => {
+  const dateA = new Date(a.data.pubDate).getTime();
+  const dateB = new Date(b.data.pubDate).getTime();
+  return dateB - dateA;
+});
 const lang = getLangFromUrl(Astro.url);
 ---
 
