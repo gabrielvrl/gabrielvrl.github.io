@@ -39,12 +39,12 @@ function displayUserInfo<T extends User>(user: T): void {
   console.log(`Name: ${user.name}`);
   console.log(`Age: ${user.age}`);
   if ("email" in user) {
-    console.log(`Email: ${(user as UserWithEmail).email}`);
+    console.log(`Email: ${user.email}`);
   }
 }
 ```
 
-In this function, `T` is a placeholder for the type of the user object. When we call the function, TypeScript will automatically infer the type based on the argument passed.
+Here, `T` is a generic parameter that represents the type of the `user` object. When we call the function, TypeScript automatically infers the type of user based on the argument we pass. This allows the function to work with different user types (for example, `User` or `UserWithEmail`), while maintaining both flexibility and type safety.
 
 ### How Does This Work?
 
@@ -133,7 +133,7 @@ Here’s an example of a reusable `ListDisplay` component that works with any ty
 
 ```tsx
 import React from "react";
-import { FlatList, Text, View } from "react-native";
+import { FlatList, View } from "react-native";
 
 // Define a generic type for the ListDisplay component
 type ListDisplayProps<T> = {
@@ -163,9 +163,9 @@ Now, let's say you want to display a list of users. You can create a list of `Us
 
 ```tsx
 const users = [
-  { id: '1', name: 'Alice', age: 30 },
-  { id: '2', name: 'Bob', age: 25 },
-  { id: '3', name: 'Charlie', age: 40 },
+  { id: "1", name: "Alice", age: 30 },
+  { id: "2", name: "Bob", age: 25 },
+  { id: "3", name: "Charlie", age: 40 },
 ];
 
 const renderUser = (user: User) => (
@@ -173,9 +173,10 @@ const renderUser = (user: User) => (
 );
 
 // Using the generic ListDisplay component with User data
-<ListDisplay data={users} renderItem={renderUser} />
-You can also use ListDisplay to render a list of products or any other type by simply passing the appropriate data and renderItem function.
+<ListDisplay data={users} renderItem={renderUser} />;
 ```
+
+You can also use ListDisplay to render a list of products or any other type by simply passing the appropriate data and renderItem function.
 
 Example with Products:
 

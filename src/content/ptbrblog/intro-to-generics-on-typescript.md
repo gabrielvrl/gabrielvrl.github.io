@@ -28,7 +28,7 @@ interface UserWithEmail extends User {
 }
 ```
 
-Até aqui tudo bem, mas se quisermos criar uma função que funcione tanto para User quanto para UserWithEmail, normalmente teríamos que escrever funções separadas para cada caso. Mas podemos fazer isso usando Generics.
+Até aqui tudo bem, mas se quisermos criar uma função que funcione tanto para `User` quanto para `UserWithEmail`, normalmente teríamos que escrever funções separadas para cada caso. Mas podemos fazer isso usando Generics.
 
 ### Usando Generics para Lidar com Diferentes Tipos
 
@@ -39,12 +39,12 @@ function displayUserInfo<T extends User>(user: T): void {
   console.log(`Name: ${user.name}`);
   console.log(`Age: ${user.age}`);
   if ("email" in user) {
-    console.log(`Email: ${(user as UserWithEmail).email}`);
+    console.log(`Email: ${user.email}`);
   }
 }
 ```
 
-Nessa função, `T` é um espaço reservado para o tipo do objeto `user`. Quando chamamos a função, o TypeScript irá inferir automaticamente o tipo com base no argumento passado.
+Aqui, `T` é um parâmetro genérico que representa o tipo do objeto `user`. Quando chamamos a função, o TypeScript determina automaticamente o tipo de user com base no argumento que passamos. Isso permite que a função trabalhe com diferentes tipos de usuário (por exemplo, `User` ou `UserWithEmail`), mantendo a flexibilidade e a segurança do tipo.
 
 ### Como isso funciona?
 
@@ -133,7 +133,7 @@ Aqui está um exemplo de um componente reutilizável `ListDisplay` que funciona 
 
 ```tsx
 import React from "react";
-import { FlatList, Text, View } from "react-native";
+import { FlatList, View } from "react-native";
 
 // Defina um tipo genérico para o componente ListDisplay
 type ListDisplayProps<T> = {
@@ -163,9 +163,9 @@ Agora, digamos que você queira exibir uma lista de usuários. Você pode criar 
 
 ```tsx
 const users = [
-  { id: '1', name: 'Alice', age: 30 },
-  { id: '2', name: 'Bob', age: 25 },
-  { id: '3', name: 'Charlie', age: 40 },
+  { id: "1", name: "Alice", age: 30 },
+  { id: "2", name: "Bob", age: 25 },
+  { id: "3", name: "Charlie", age: 40 },
 ];
 
 const renderUser = (user: User) => (
@@ -173,9 +173,10 @@ const renderUser = (user: User) => (
 );
 
 // Usando o componente genérico ListDisplay com dados de Usuário
-<ListDisplay data={users} renderItem={renderUser} />
-You can also use ListDisplay to render a list of products or any other type by simply passing the appropriate data and renderItem function.
+<ListDisplay data={users} renderItem={renderUser} />;
 ```
+
+Você também pode usar o `ListDisplay` para renderizar uma lista de produtos ou qualquer outro tipo simplesmente passando os dados apropriados e a função renderItem.
 
 Exemplo com Produtos:
 
