@@ -157,7 +157,7 @@ const ListDisplay = <T extends { id: string }>({
 export default ListDisplay;
 ```
 
-### How to Use the ListDisplay Component
+### Como usar o componente ListDisplay
 
 Agora, digamos que você queira exibir uma lista de usuários. Você pode criar uma lista de objetos `User` e passá-la para o componente `ListDisplay`, fornecendo uma função `renderItem` para definir como cada usuário deve ser exibido:
 
