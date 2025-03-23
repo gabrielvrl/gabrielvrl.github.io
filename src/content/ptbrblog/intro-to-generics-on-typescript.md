@@ -35,10 +35,10 @@ Até aqui tudo bem, mas se quisermos criar uma função que funcione tanto para 
 Vamos definir uma função genérica que possa lidar com diferentes tipos de dados de usuário. Veja como podemos fazer isso:
 
 ```tsx
-function displayUserInfo<T>(user: T): void {
+function displayUserInfo<T extends User>(user: T): void {
   console.log(`Name: ${user.name}`);
   console.log(`Age: ${user.age}`);
-  if ((user as UserWithEmail).email) {
+  if ("email" in user) {
     console.log(`Email: ${(user as UserWithEmail).email}`);
   }
 }

@@ -35,10 +35,10 @@ This is fine, but if we wanted to create a function that works with both User an
 Let’s define a generic function that can handle different types of user data. Here’s how we might do it:
 
 ```tsx
-function displayUserInfo<T>(user: T): void {
+function displayUserInfo<T extends User>(user: T): void {
   console.log(`Name: ${user.name}`);
   console.log(`Age: ${user.age}`);
-  if ((user as UserWithEmail).email) {
+  if ("email" in user) {
     console.log(`Email: ${(user as UserWithEmail).email}`);
   }
 }
