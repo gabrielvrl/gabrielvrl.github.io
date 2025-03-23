@@ -88,6 +88,7 @@ b {
 }
 a {
   color: inherit;
+  @apply text-black dark:text-white;
 }
 a:hover {
   color: inherit;
