@@ -65,8 +65,8 @@ displayUserInfo(user2); // Também funciona!
 O poder dos Generics entra em cena aqui: em vez de escrever funções separadas para cada tipo (User e UserWithEmail), podemos usar uma única função flexível. Mas ainda assim temos segurança de tipos, se uma propriedade como email não estiver disponível no usuário, o TypeScript nos dará um erro quando tentarmos acessá-la, como mostrado abaixo:
 
 ```tsx
-const invalidUser = { name: "Charlie", age: 40 };
-displayUserInfo(invalidUser); // Error: Property 'name' is missing in type '{}' but required in type 'User'.ts(2345)
+const invalidUser = { age: 40 };
+displayUserInfo(invalidUser); // Error: Property 'name' is missing in type '{ age: number; }' but required in type 'User'.ts(2345)
 ```
 
 Esse é um dos principais benefícios de usar Generics, você obtém flexibilidade para lidar com vários tipos, mantendo a forte segurança de tipos em toda a sua aplicação.
