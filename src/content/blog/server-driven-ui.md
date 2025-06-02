@@ -1,5 +1,5 @@
 ---
-title: "Mobile Development – Rethinking the Approach Around UI Delivery"
+title: "Mobile development – Rethinking the approach around UI delivery"
 description: "Server-driven UI on mobile development"
 pubDate: "Jun 02 2025"
 heroImage: "/server-driven-ui.png"

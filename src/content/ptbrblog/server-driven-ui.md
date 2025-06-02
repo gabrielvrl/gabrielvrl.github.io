@@ -1,5 +1,5 @@
 ---
-title: "Desenvolvimento Mobile – Uma Abordagem Diferente para a Entrega de Interface"
+title: "Desenvolvimento mobile – Uma abordagem diferente para a entrega de interfaces"
 description: "Interface Controlada pelo Servidor no desenvolvimento mobile"
 pubDate: "Jun 02 2025"
 heroImage: "/server-driven-ui.png"
