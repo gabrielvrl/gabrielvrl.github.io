@@ -140,6 +140,12 @@ blockquote {
   margin: 0px;
   font-size: 1.333em;
 }
+.dark .prose code {
+  color: rgb(var(--gray-dark));
+}
+.dark blockquote {
+  color: rgb(var(--gray-light));
+}
 hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
