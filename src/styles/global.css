@@ -140,8 +140,13 @@ blockquote {
   margin: 0px;
   font-size: 1.333em;
 }
-.dark .prose code {
-  color: rgb(var(--gray-dark));
+.dark code {
+  background-color: rgb(var(--gray-dark));
+  color: rgb(var(--gray-light));
+}
+.dark pre code, .dark pre code * {
+  color: rgb(var(--gray-light)) !important;
+  background-color: transparent;
 }
 .dark blockquote {
   color: rgb(var(--gray-light));
